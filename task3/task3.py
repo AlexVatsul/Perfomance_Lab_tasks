@@ -1,8 +1,9 @@
+import sys
 import json
 
-path_report = 'report.json'
-path_tests = 'tests.json'
-path_values = 'values.json'
+path_values = sys.argv[1]
+path_tests = sys.argv[2]
+path_report = sys.argv[3]
 
 with open(path_values, 'r') as file:
     data_values = json.load(file)
@@ -29,8 +30,3 @@ for i in data_tests['tests']:
 
 with open(path_report, 'w') as f:
     json.dump(data_tests, f, indent=2)
-
-
-
-
-

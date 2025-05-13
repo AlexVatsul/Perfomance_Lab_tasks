@@ -1,4 +1,6 @@
-n, m = map(int, input().split())
+import sys
+
+n, m = map(int, sys.argv[1:3])
 
 lst_n = [i for i in range(1, n+1)]
 

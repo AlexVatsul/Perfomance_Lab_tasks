@@ -1,4 +1,8 @@
-with open('numbers.txt', 'r') as file:
+import sys
+
+numbers_file = sys.argv[1]
+
+with open(numbers_file, 'r') as file:
     numbers = [int(line.strip()) for line in file]
 
 

@@ -1,7 +1,13 @@
+import sys
+
+circle_path = sys.argv[1]
+dot_path = sys.argv[2]
+
+
 circle = {}
 dots = []
 
-with open('circle.txt', 'r') as file:
+with open(circle_path, 'r') as file:
     x_str, y_str = file.readline().split()
     r_str = file.readline()
 
@@ -9,7 +15,7 @@ with open('circle.txt', 'r') as file:
     circle['y'] = float(y_str)
     circle['r'] = float(r_str)
 
-with open('dot.txt', 'r') as file:
+with open(dot_path, 'r') as file:
     for line in file:
         x_str, y_str = line.split()
         dot = {
@@ -28,7 +34,7 @@ def formula(a, b):
         x_d = i['x']
         y_d = i['y']
         r_new = (x_d - x_c)**2 + (y_d - y_c)**2
-        if r_new < r_c:
+        if r_new < r_c**2:
             print(1)
         elif r_new > r_c**2:
             print(2)
